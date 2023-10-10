@@ -4,92 +4,26 @@
 
 int main ()
 {
-      int n, i, j, k, resp = 0, ope, temp, suma=0;
+      int n, i, j, p, opcion=0, operacion, temp, suma=0;
       
       srand(time(NULL));
-      
-      printf ("Elige una operacion para hacer con matices\n"
-      "1=suma\t 2=resta\t 3=diagonaL\t4 =multiplicacion \n");
-      scanf("%d", &resp);
-      
-      printf("ingrese la longitud de la matriz \n");
+      printf("longitud de la matriz \n");
       scanf("%d", &n);
-      int A[n][n], B[n][n], C[n][n];
+      int a[n][n], b[n][n], c[n][n];
+      printf ("operacion:\n"
+      "1.diagonal\n 2.resta\n 3.suma\n 4.multiplicacion \n");
+      scanf("%d", &opcion);
       
-      switch (resp)
+      switch (opcion)
       {
             case 1:
-                  printf("Matriz A\n");
+                  printf("Matriz a\n");
                   for (i=0; i<n; i++)
                   {
                         for(j=0; j<n; j++)
                         {
-                              A[i][j] = rand () % 10 +1;
-                              printf("%d ", A[i][j]);
-                        }
-                        printf("\n");
-                  }
-                  printf("Matriz B\n");
-                  for (i=0; i<n; i++)
-                  {
-                        for(j=0; j<n; j++)
-                        {
-                              B[i][j] = rand () % 10 +1;
-                              printf("%d ", B[i][j]);
-                        }
-                        printf("\n");
-                  }
-                  printf("Matriz C\n");
-                  for (i=0; i<n; i++)
-                  {
-                        for(j=0; j<n; j++)
-                        {
-                              C[i][j]= A[i][j] + B[i][j];
-                              printf("%d ", C[i][j]);
-                        }
-                        printf("\n");
-                  }
-                  break;
-      case 2:
-                  printf("Matriz A\n");
-                  for (i=0; i<n; i++)
-                  {
-                        for(j=0; j<n; j++)
-                        {
-                              A[i][j] = rand () % 10 +1;
-                              printf("%d ", A[i][j]);
-                        }
-                        printf("\n");
-                  }
-                  printf("Matriz B\n");
-                  for (i=0; i<n; i++)
-                  {
-                        for(j=0; j<n; j++)
-                        {
-                              B[i][j] = rand () % 10 +1;
-                              printf("%d ", B[i][j]);
-                        }
-                        printf("\n");
-                  }
-                  printf("Matriz C\n");
-                  for (i=0; i<n; i++)
-                  {
-                        for(j=0; j<n; j++)
-                        {
-                              C[i][j]= A[i][j] - B[i][j];
-                              printf("%d ", C[i][j]);
-                        }
-                        printf("\n");
-                  }
-                  break;
-      case 3:
-                  printf("Matriz A\n");
-                  for (i=0; i<n; i++)
-                  {
-                        for(j=0; j<n; j++)
-                        {
-                              A[i][j] = rand () % 10 +1;
-                              printf("%d ", A[i][j]);
+                              a[i][j] = rand () % 10 +1;
+                              printf("%d ", a[i][j]);
                         }
                         printf("\n");
                   }
@@ -97,51 +31,114 @@ int main ()
       for(i=0 ; i<n ; i++)
       {
             j=i;
-            printf("a[%d][%d] = %d\n", i, j, A[i][j]);
-            suma+= A[i][j];
+            printf("a[%d][%d] = %d\n", i, j, a[i][j]);
+            suma+= a[i][j];
             
       }
-      printf ("La suma de su diagonal es: %d\n", suma);
-      }
-      
-      if(resp==4)
-      {
-                  printf("Matriz A\n");
+            printf ("La suma de su diagonal es: %d\n", suma);
+            break;
+
+      case 2:
+                  printf("Matriz a\n");
                   for (i=0; i<n; i++)
                   {
                         for(j=0; j<n; j++)
                         {
-                              A[i][j] = rand () % 10 +1;
-                              printf("%d ", A[i][j]);
+                              a[i][j] = rand () % 10 +1;
+                              printf("%d ", a[i][j]);
                         }
                         printf("\n");
                   }
-                  printf("Matriz B\n");
+                  printf("Matriz b\n");
                   for (i=0; i<n; i++)
                   {
                         for(j=0; j<n; j++)
                         {
-                              B[i][j] = rand () % 10 +1;
-                              printf("%d ", B[i][j]);
+                              b[i][j] = rand () % 10 +1;
+                              printf("%d ", b[i][j]);
                         }
                         printf("\n");
                   }
-                  printf("Matriz C\n");
+                  printf("Matriz c\n");
+                  for (i=0; i<n; i++)
+                  {
+                        for(j=0; j<n; j++)
+                        {
+                              c[i][j]= a[i][j] - b[i][j];
+                              printf("%d ", c[i][j]);
+                        }
+                        printf("\n");
+                  }
+                  break;
+      case 3:
+       printf("Matriz a\n");
+                  for (i=0; i<n; i++)
+                  {
+                        for(j=0; j<n; j++)
+                        {
+                              a[i][j] = rand () % 10 +1;
+                              printf("%d ", a[i][j]);
+                        }
+                        printf("\n");
+                  }
+                  printf("Matriz b\n");
+                  for (i=0; i<n; i++)
+                  {
+                        for(j=0; j<n; j++)
+                        {
+                              b[i][j] = rand () % 10 +1;
+                              printf("%d ", b[i][j]);
+                        }
+                        printf("\n");
+                  }
+                  printf("Matriz c\n");
+                  for (i=0; i<n; i++)
+                  {
+                        for(j=0; j<n; j++)
+                        {
+                              c[i][j]= a[i][j] + b[i][j];
+                              printf("%d ", c[i][j]);
+                        }
+                        printf("\n");
+                  }
+                  break;
+      case 4:
+      printf("Matriz a\n");
+                  for (i=0; i<n; i++)
+                  {
+                        for(j=0; j<n; j++)
+                        {
+                              a[i][j] = rand () % 10 +1;
+                              printf("%d ", a[i][j]);
+                        }
+                        printf("\n");
+                  }
+                  printf("Matriz b\n");
+                  for (i=0; i<n; i++)
+                  {
+                        for(j=0; j<n; j++)
+                        {
+                              b[i][j] = rand () % 10 +1;
+                              printf("%d ", b[i][j]);
+                        }
+                        printf("\n");
+                  }
+                  printf("Matriz c\n");
                   for (i=0; i<n; i++)
                   {
                         for (j=0; j<n; j++)
                         {
                               temp = 0;
-                              for (k =0; k<n; k++)
+                              for (p =0; p<n; p++)
                               {
-                                    temp += A[i][k] * B[k][j];
+                                    temp += a[i][p] * b[p][j];
                               }
-                              C[i][j] = temp;
-                              printf("%d ", C[i][j]);
+                              c[i][j] = temp;
+                              printf("%d ", c[i][j]);
                         }
                         printf("\n");
                   }
-            
+          break;
             
       }
       
