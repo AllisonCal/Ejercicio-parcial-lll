@@ -10,8 +10,7 @@ int main ()
       printf("longitud de la matriz \n");
       scanf("%d", &n);
       int a[n][n], b[n][n], c[n][n];
-      printf ("operacion:\n"
-      "1.diagonal\n 2.resta\n 3.suma\n 4.multiplicacion \n");
+      printf ("operacion:\n 1.diagonal\n 2.resta\n 3.suma\n 4.multiplicacion \n");
       scanf("%d", &opcion);
       
       switch (opcion)
